@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E53CC8941EE7E5FB0090DFAA /* CanvasViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */; };
+		E53CC8981EE7FBE70090DFAA /* ScribbleThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC8971EE7FBE70090DFAA /* ScribbleThumbnailView.m */; };
+		E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */; };
 		E57CA27C1EE5514400E9C7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA27B1EE5514400E9C7E5 /* main.m */; };
 		E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */; };
 		E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2971EE553EB00E9C7E5 /* ViewController.m */; };
@@ -52,6 +54,11 @@
 /* Begin PBXFileReference section */
 		E53CC8921EE7E5FB0090DFAA /* CanvasViewGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewGenerator.h; sourceTree = "<group>"; };
 		E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewGenerator.m; sourceTree = "<group>"; };
+		E53CC8951EE7FB9E0090DFAA /* ScribbleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleSource.h; sourceTree = "<group>"; };
+		E53CC8961EE7FBE70090DFAA /* ScribbleThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleThumbnailView.h; sourceTree = "<group>"; };
+		E53CC8971EE7FBE70090DFAA /* ScribbleThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleThumbnailView.m; sourceTree = "<group>"; };
+		E53CC8991EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleThumbnailViewImageProxy.h; sourceTree = "<group>"; };
+		E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleThumbnailViewImageProxy.m; sourceTree = "<group>"; };
 		E57CA2771EE5514400E9C7E5 /* TouchPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57CA27B1EE5514400E9C7E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E57CA28B1EE5514400E9C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,6 +241,11 @@
 		E57CA2A61EE554CA00E9C7E5 /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
+				E53CC8951EE7FB9E0090DFAA /* ScribbleSource.h */,
+				E53CC8961EE7FBE70090DFAA /* ScribbleThumbnailView.h */,
+				E53CC8971EE7FBE70090DFAA /* ScribbleThumbnailView.m */,
+				E53CC8991EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.h */,
+				E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */,
 			);
 			path = Proxy;
 			sourceTree = "<group>";
@@ -484,6 +496,7 @@
 				E57CA2EE1EE5679800E9C7E5 /* CommandBarButton.m in Sources */,
 				E590F5F51EE683670033AF17 /* Stroke.m in Sources */,
 				E57CA2B01EE5588400E9C7E5 /* UIView+UIImage.m in Sources */,
+				E53CC8981EE7FBE70090DFAA /* ScribbleThumbnailView.m in Sources */,
 				E590F5FE1EE68C570033AF17 /* PrototypeController.m in Sources */,
 				E57CA2B51EE559EB00E9C7E5 /* NSMutableArray+Stack.m in Sources */,
 				E57CA2BC1EE55B1F00E9C7E5 /* CommandSlider.m in Sources */,
@@ -500,6 +513,7 @@
 				E590F5E71EE65E540033AF17 /* Scribble.m in Sources */,
 				E57CA2C61EE55C8700E9C7E5 /* CanvasViewController.m in Sources */,
 				E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */,
+				E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */,
 				E590F5F21EE6823E0033AF17 /* Dot.m in Sources */,
 				E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */,
 				E57CA27C1EE5514400E9C7E5 /* main.m in Sources */,
