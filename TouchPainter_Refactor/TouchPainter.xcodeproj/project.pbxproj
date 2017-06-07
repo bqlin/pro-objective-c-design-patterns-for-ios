@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53CC8941EE7E5FB0090DFAA /* CanvasViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */; };
 		E57CA27C1EE5514400E9C7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA27B1EE5514400E9C7E5 /* main.m */; };
 		E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */; };
 		E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2971EE553EB00E9C7E5 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E53CC8921EE7E5FB0090DFAA /* CanvasViewGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewGenerator.h; sourceTree = "<group>"; };
+		E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewGenerator.m; sourceTree = "<group>"; };
 		E57CA2771EE5514400E9C7E5 /* TouchPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57CA27B1EE5514400E9C7E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E57CA28B1EE5514400E9C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 		E57CA2A91EE5550A00E9C7E5 /* FactoryMethod */ = {
 			isa = PBXGroup;
 			children = (
+				E53CC8921EE7E5FB0090DFAA /* CanvasViewGenerator.h */,
+				E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */,
 			);
 			path = FactoryMethod;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				E590F6011EE68CA40033AF17 /* CanvasView.m in Sources */,
 				E590F5E41EE65E1F0033AF17 /* ScribbleManager.m in Sources */,
 				E57CA2BF1EE55B5600E9C7E5 /* Command.m in Sources */,
+				E53CC8941EE7E5FB0090DFAA /* CanvasViewGenerator.m in Sources */,
 				E590F6041EE68D330033AF17 /* MarkRenderer.m in Sources */,
 				E57CA2E51EE5615D00E9C7E5 /* CoordinatingController.m in Sources */,
 				E590F5E71EE65E540033AF17 /* Scribble.m in Sources */,
