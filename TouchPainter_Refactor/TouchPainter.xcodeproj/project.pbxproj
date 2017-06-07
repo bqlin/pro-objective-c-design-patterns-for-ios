@@ -45,6 +45,7 @@
 		E590F5FE1EE68C570033AF17 /* PrototypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E590F5FD1EE68C570033AF17 /* PrototypeController.m */; };
 		E590F6011EE68CA40033AF17 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = E590F6001EE68CA40033AF17 /* CanvasView.m */; };
 		E590F6041EE68D330033AF17 /* MarkRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E590F6031EE68D330033AF17 /* MarkRenderer.m */; };
+		E590F6071EE6B6720033AF17 /* ScribbleMemento.m in Sources */ = {isa = PBXBuildFile; fileRef = E590F6061EE6B6720033AF17 /* ScribbleMemento.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		E590F6001EE68CA40033AF17 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		E590F6021EE68D330033AF17 /* MarkRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkRenderer.h; sourceTree = "<group>"; };
 		E590F6031EE68D330033AF17 /* MarkRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkRenderer.m; sourceTree = "<group>"; };
+		E590F6051EE6B6720033AF17 /* ScribbleMemento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleMemento.h; sourceTree = "<group>"; };
+		E590F6061EE6B6720033AF17 /* ScribbleMemento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleMemento.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 		E57CA2A51EE554B900E9C7E5 /* MemenroObserver */ = {
 			isa = PBXGroup;
 			children = (
+				E590F6051EE6B6720033AF17 /* ScribbleMemento.h */,
+				E590F6061EE6B6720033AF17 /* ScribbleMemento.m */,
 				E590F5E21EE65E1F0033AF17 /* ScribbleManager.h */,
 				E590F5E31EE65E1F0033AF17 /* ScribbleManager.m */,
 				E590F5E51EE65E540033AF17 /* Scribble.h */,
@@ -492,6 +497,7 @@
 				E590F5F21EE6823E0033AF17 /* Dot.m in Sources */,
 				E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */,
 				E57CA27C1EE5514400E9C7E5 /* main.m in Sources */,
+				E590F6071EE6B6720033AF17 /* ScribbleMemento.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

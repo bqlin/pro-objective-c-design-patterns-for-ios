@@ -119,7 +119,7 @@
 #pragma mark enumerator methods
 
 - (NSEnumerator *)enumerator {
-    return [[MarkEnumerator alloc] initWithWithMark:self];
+    return [[MarkEnumerator alloc] initWithMark:self];
 }
 
 - (void)enumerateMarksUsingBlock:(void (^)(id<Mark>, BOOL *))block {

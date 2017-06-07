@@ -12,9 +12,13 @@
 
 @interface MarkEnumerator : NSEnumerator
 
-- (instancetype)initWithWithMark:(id<Mark>)mark;
-- (void)traverseAndBuildStackWithMark:(id<Mark>)mark;
-
 // !!!: omit NSEnumerator interface
+
+@end
+
+@interface MarkEnumerator (Private)
+
+- (id) initWithMark:(id <Mark>)mark;
+- (void) traverseAndBuildStackWithMark:(id <Mark>)mark;
 
 @end

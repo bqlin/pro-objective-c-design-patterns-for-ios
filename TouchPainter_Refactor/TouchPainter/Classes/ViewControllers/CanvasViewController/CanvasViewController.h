@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Scribble.h"
+
 
 @interface CanvasViewController : UIViewController
 

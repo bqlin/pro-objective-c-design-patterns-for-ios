@@ -32,7 +32,7 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (instancetype)initWithWithMark:(id<Mark>)mark {
+- (instancetype)initWithMark:(id<Mark>)mark {
     if (self = [super init]) {
         _stack = [[NSMutableArray alloc] initWithCapacity:mark.count];
         
