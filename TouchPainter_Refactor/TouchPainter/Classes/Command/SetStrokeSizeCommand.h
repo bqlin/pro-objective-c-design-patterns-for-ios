@@ -20,6 +20,6 @@
 
 @interface SetStrokeSizeCommand : Command
 
-@property (nonatomic, weak) id<SetStrokeSizeCommandDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<SetStrokeSizeCommandDelegate> delegate;
 
 @end

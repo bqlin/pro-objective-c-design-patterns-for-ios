@@ -63,6 +63,9 @@
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="5" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="DS1-kI-slb" customClass="CommandSlider">
                     <rect key="frame" x="64" y="355" width="194" height="29"/>
                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <connections>
+                        <outlet property="command" destination="PXE-o7-ETl" id="rO8-fW-OFN"/>
+                    </connections>
                 </slider>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="large_dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="Uym-cA-Aav">
                     <rect key="frame" x="258" y="349" width="29" height="27"/>
@@ -106,7 +109,11 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="356" y="417"/>
         </view>
-        <customObject id="PXE-o7-ETl"/>
+        <customObject id="PXE-o7-ETl" customClass="SetStrokeSizeCommand">
+            <connections>
+                <outlet property="delegate" destination="-1" id="RcW-NW-M6k"/>
+            </connections>
+        </customObject>
         <customObject id="9AQ-QP-qol" customClass="SetStrokeColorCommand">
             <connections>
                 <outlet property="delegate" destination="-1" id="eCa-OS-Sdd"/>
