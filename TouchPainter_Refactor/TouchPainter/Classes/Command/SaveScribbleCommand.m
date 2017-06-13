@@ -7,7 +7,7 @@
 //
 
 #import "SaveScribbleCommand.h"
-//#import "<#header#>"
+#import "ScribbleManager.h"
 
 @implementation SaveScribbleCommand
 
