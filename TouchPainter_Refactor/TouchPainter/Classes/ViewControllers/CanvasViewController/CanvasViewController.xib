@@ -19,17 +19,43 @@
                     <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ezb-uR-wRs"/>
-                        <barButtonItem style="plain" systemItem="trash" id="BtM-Wy-glI" customClass="CommandBarButton"/>
+                        <barButtonItem style="plain" systemItem="trash" id="BtM-Wy-glI" customClass="CommandBarButton">
+                            <connections>
+                                <action selector="onCustomBarButtonHit:" destination="-1" id="5jN-Ph-V3N"/>
+                                <outlet property="command" destination="y7A-gU-OL2" id="Eg9-2d-cja"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Z0v-Jp-yLM"/>
-                        <barButtonItem image="save.png" style="plain" id="RmJ-1u-v6N" customClass="CommandBarButton"/>
+                        <barButtonItem image="save.png" style="plain" id="RmJ-1u-v6N" userLabel="Save" customClass="CommandBarButton">
+                            <connections>
+                                <action selector="onCustomBarButtonHit:" destination="-1" id="21e-Cp-YrW"/>
+                                <outlet property="command" destination="3Zc-N2-FAg" id="iBI-Sc-Gop"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0tY-dN-rUr"/>
-                        <barButtonItem tag="2" image="open.png" style="plain" id="6MC-md-4sb"/>
+                        <barButtonItem tag="2" image="open.png" style="plain" id="6MC-md-4sb">
+                            <connections>
+                                <action selector="requestViewChangeByObject:" destination="Rqk-K2-iZT" id="Esc-yw-M9M"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="s2f-Md-if3"/>
-                        <barButtonItem tag="1" image="palette.png" style="plain" id="nHk-Oe-oai"/>
+                        <barButtonItem tag="1" image="palette.png" style="plain" id="nHk-Oe-oai" userLabel="Palette">
+                            <connections>
+                                <action selector="requestViewChangeByObject:" destination="Rqk-K2-iZT" id="vfD-SA-4Lz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5XX-TK-0b0"/>
-                        <barButtonItem tag="4" image="undo.png" style="plain" id="STq-B5-DJo"/>
+                        <barButtonItem tag="4" image="undo.png" style="plain" id="STq-B5-DJo" userLabel="Undo">
+                            <connections>
+                                <action selector="onBarButtonHit:" destination="-1" id="rwe-bY-gCD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="pq3-Ln-Jgm"/>
-                        <barButtonItem tag="5" image="redo.png" style="plain" id="5AT-AJ-atP"/>
+                        <barButtonItem tag="5" image="redo.png" style="plain" id="5AT-AJ-atP" userLabel="Redo">
+                            <connections>
+                                <action selector="onBarButtonHit:" destination="-1" id="zkg-VQ-JGR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="G78-mB-49Q"/>
                     </items>
                 </toolbar>
@@ -42,6 +68,9 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
+        <customObject id="Rqk-K2-iZT" customClass="CoordinatingController"/>
+        <customObject id="3Zc-N2-FAg" customClass="SaveScribbleCommand"/>
+        <customObject id="y7A-gU-OL2" customClass="DeleteScribbleCommand"/>
     </objects>
     <resources>
         <image name="open.png" width="24" height="24"/>

@@ -13,6 +13,8 @@
 		E53CC8941EE7E5FB0090DFAA /* CanvasViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC8931EE7E5FB0090DFAA /* CanvasViewGenerator.m */; };
 		E53CC8981EE7FBE70090DFAA /* ScribbleThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC8971EE7FBE70090DFAA /* ScribbleThumbnailView.m */; };
 		E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */; };
+		E550DE301EEFDAC3006A1CC3 /* DeleteScribbleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E550DE2F1EEFDAC3006A1CC3 /* DeleteScribbleCommand.m */; };
+		E550DE331EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E550DE321EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m */; };
 		E57CA27C1EE5514400E9C7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA27B1EE5514400E9C7E5 /* main.m */; };
 		E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */; };
 		E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2971EE553EB00E9C7E5 /* ViewController.m */; };
@@ -66,6 +68,10 @@
 		E53CC8971EE7FBE70090DFAA /* ScribbleThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleThumbnailView.m; sourceTree = "<group>"; };
 		E53CC8991EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleThumbnailViewImageProxy.h; sourceTree = "<group>"; };
 		E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleThumbnailViewImageProxy.m; sourceTree = "<group>"; };
+		E550DE2E1EEFDAC3006A1CC3 /* DeleteScribbleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteScribbleCommand.h; sourceTree = "<group>"; };
+		E550DE2F1EEFDAC3006A1CC3 /* DeleteScribbleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteScribbleCommand.m; sourceTree = "<group>"; };
+		E550DE311EEFDB6E006A1CC3 /* SetStrokeSizeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStrokeSizeCommand.h; sourceTree = "<group>"; };
+		E550DE321EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeSizeCommand.m; sourceTree = "<group>"; };
 		E57CA2771EE5514400E9C7E5 /* TouchPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57CA27B1EE5514400E9C7E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E57CA28B1EE5514400E9C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -303,14 +309,18 @@
 		E57CA2AB1EE5552B00E9C7E5 /* Command */ = {
 			isa = PBXGroup;
 			children = (
-				E5069E861EEF884000A68799 /* OpenScribbleCommand.h */,
-				E5069E871EEF884000A68799 /* OpenScribbleCommand.m */,
 				E57CA2BD1EE55B5600E9C7E5 /* Command.h */,
 				E57CA2BE1EE55B5600E9C7E5 /* Command.m */,
 				E57CA2E01EE55F6600E9C7E5 /* SetStrokeColorCommand.h */,
 				E57CA2E11EE55F6600E9C7E5 /* SetStrokeColorCommand.m */,
+				E550DE311EEFDB6E006A1CC3 /* SetStrokeSizeCommand.h */,
+				E550DE321EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m */,
 				E590F5DC1EE65D150033AF17 /* SaveScribbleCommand.h */,
 				E590F5DD1EE65D150033AF17 /* SaveScribbleCommand.m */,
+				E5069E861EEF884000A68799 /* OpenScribbleCommand.h */,
+				E5069E871EEF884000A68799 /* OpenScribbleCommand.m */,
+				E550DE2E1EEFDAC3006A1CC3 /* DeleteScribbleCommand.h */,
+				E550DE2F1EEFDAC3006A1CC3 /* DeleteScribbleCommand.m */,
 			);
 			path = Command;
 			sourceTree = "<group>";
@@ -518,11 +528,13 @@
 				E590F5F81EE683CB0033AF17 /* MarkEnumerator.m in Sources */,
 				E57CA2DE1EE55E1E00E9C7E5 /* PaletteViewController.m in Sources */,
 				E57CA2E21EE55F6600E9C7E5 /* SetStrokeColorCommand.m in Sources */,
+				E550DE331EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m in Sources */,
 				E590F6011EE68CA40033AF17 /* CanvasView.m in Sources */,
 				E590F5E41EE65E1F0033AF17 /* ScribbleManager.m in Sources */,
 				E57CA2BF1EE55B5600E9C7E5 /* Command.m in Sources */,
 				E53CC8941EE7E5FB0090DFAA /* CanvasViewGenerator.m in Sources */,
 				E590F6041EE68D330033AF17 /* MarkRenderer.m in Sources */,
+				E550DE301EEFDAC3006A1CC3 /* DeleteScribbleCommand.m in Sources */,
 				E57CA2E51EE5615D00E9C7E5 /* CoordinatingController.m in Sources */,
 				E590F5E71EE65E540033AF17 /* Scribble.m in Sources */,
 				E57CA2C61EE55C8700E9C7E5 /* CanvasViewController.m in Sources */,
