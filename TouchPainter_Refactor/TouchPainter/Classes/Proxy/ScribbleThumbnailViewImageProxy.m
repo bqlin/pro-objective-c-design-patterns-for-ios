@@ -62,7 +62,7 @@
     // otherwise pass the draw*: message
     // along to realImage_ and let it
     // draw the real image
-    if (_realImage == nil) {
+    if (self.image == nil) {
         // Drawing code
         CGContextRef context = UIGraphicsGetCurrentContext();
         
@@ -85,7 +85,7 @@
             _loadingThreadHasLaunched = YES;
         }
     } else {
-        [_realImage drawInRect:rect];
+        [self.image drawInRect:rect];
     }
 }
 
