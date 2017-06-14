@@ -27,6 +27,9 @@ static NSString * const SizeKey = @"size";
 // hook up everything with a new Scribble instance
 - (void)setScribble:(Scribble *)scribble {
     if (_scribble != scribble) {
+        // remove kvo
+        [_scribble removeObserver:self forKeyPath:MarkKey];
+        
         _scribble = scribble;
         
         // add itself to the scribble as
