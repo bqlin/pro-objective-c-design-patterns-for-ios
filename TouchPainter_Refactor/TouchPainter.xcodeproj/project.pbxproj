@@ -18,7 +18,6 @@
 		E550DE3B1EEFF3E8006A1CC3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E550DE3A1EEFF3E8006A1CC3 /* icon.png */; };
 		E57CA27C1EE5514400E9C7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA27B1EE5514400E9C7E5 /* main.m */; };
 		E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */; };
-		E57CA2A01EE553EB00E9C7E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */; };
 		E57CA2A11EE553EB00E9C7E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57CA29A1EE553EB00E9C7E5 /* LaunchScreen.storyboard */; };
 		E57CA2B01EE5588400E9C7E5 /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2AF1EE5588400E9C7E5 /* UIView+UIImage.m */; };
 		E57CA2B51EE559EB00E9C7E5 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2B41EE559EB00E9C7E5 /* NSMutableArray+Stack.m */; };
@@ -77,7 +76,6 @@
 		E57CA28B1EE5514400E9C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E57CA2941EE553EB00E9C7E5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57CA29B1EE553EB00E9C7E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E57CA2AE1EE5588400E9C7E5 /* UIView+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIImage.h"; sourceTree = "<group>"; };
 		E57CA2AF1EE5588400E9C7E5 /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				E57CA2C81EE55CC500E9C7E5 /* Images */,
-				E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */,
 				E57CA29A1EE553EB00E9C7E5 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -489,7 +486,6 @@
 				E57CA2C71EE55C8700E9C7E5 /* CanvasViewController.xib in Resources */,
 				E57CA2D71EE55CC500E9C7E5 /* redo.png in Resources */,
 				E57CA2D31EE55CC500E9C7E5 /* large_dot.png in Resources */,
-				E57CA2A01EE553EB00E9C7E5 /* Assets.xcassets in Resources */,
 				E57CA2D61EE55CC500E9C7E5 /* placeholder.png in Resources */,
 				E57CA2D81EE55CC500E9C7E5 /* save.png in Resources */,
 				E57CA2DA1EE55CC500E9C7E5 /* undo.png in Resources */,
@@ -640,7 +636,6 @@
 		E57CA28F1EE5514400E9C7E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TouchPainter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -652,7 +647,6 @@
 		E57CA2901EE5514400E9C7E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TouchPainter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
