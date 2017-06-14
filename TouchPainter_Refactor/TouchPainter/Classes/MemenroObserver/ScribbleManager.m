@@ -17,13 +17,13 @@
 @interface ScribbleManager ()
 
 // create & return scribbleDataDir
-- (NSString *)scribbleDataPath;
+- (NSString *)scribbleDataDir;
 // create & return scribbleThumbnailDir
-- (NSString *)scribbleThumbnailPath;
+- (NSString *)scribbleThumbnailDir;
 // fileNames in scribbleDataDir
-- (NSArray *)scribbleDataPaths;
+- (NSArray *)scribbleDataFiles;
 // fileNames in scribbleThumbnailDir
-- (NSArray *)scribbleThumbnailPaths;
+- (NSArray *)scribbleThumbnailFiles;
 
 @end
 
@@ -41,30 +41,29 @@
     // then save the memento in the file system
     ScribbleMemento *scribbleMemento = scribble.scribbleMemento;
     NSData *mementoData = scribbleMemento.data;
-    NSString *mementoPath = [self.scribbleDataPath stringByAppendingPathComponent:scribbleDataName];
+    NSString *mementoPath = [self.scribbleDataDir stringByAppendingPathComponent:scribbleDataName];
     [mementoData writeToFile:mementoPath atomically:YES];
     
     // save the thumbnail directly in
     // the file system
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
-    NSString *imagePath = [self.scribbleThumbnailPath stringByAppendingPathComponent:scribbleThumbnailName];
+    NSString *imagePath = [self.scribbleThumbnailDir stringByAppendingPathComponent:scribbleThumbnailName];
     [imageData writeToFile:imagePath atomically:YES];
 }
 
 - (NSInteger)numberOfScribbles {
-    return self.scribbleThumbnailPaths.count;
+    return self.scribbleThumbnailFiles.count;
 }
 
 - (Scribble *)scribbleAtIndex:(NSInteger)index {
     Scribble *loadedScribble = nil;
-    NSArray *scribbleDataPathArray = self.scribbleDataPaths;
+    NSArray *scribbleDataPathArray = self.scribbleDataFiles;
     
     // load scribble data from the path indicated
     // by the index
     NSString *scribblePath = scribbleDataPathArray[index];
     if (scribblePath.length) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        // !!!:
         NSData *scribbleData = [fileManager contentsAtPath:[kScribbleDataPath stringByAppendingPathComponent:scribblePath]];
         ScribbleMemento *scribbleMemento = [ScribbleMemento mementoWithData:scribbleData];
         loadedScribble = [Scribble scribbleWithMemento:scribbleMemento];
@@ -75,19 +74,19 @@
 
 - (UIView *)scribbleThumbnailViewAtIndex:(NSInteger)index {
     ScribbleThumbnailViewImageProxy *loadedScribbleThumbnail = nil;
-    NSArray *scribbleThumbnailPathsArray = self.scribbleThumbnailPaths;
-    NSArray *scribblePathsArray = self.scribbleDataPaths;
+    NSArray *scribbleThumbnailPathsArray = self.scribbleThumbnailFiles;
+    NSArray *scribblePathsArray = self.scribbleDataFiles;
     
     // load scribble thumbnail from the path indicated
     // by the index
-    NSString *scribbleThumbnailPath = index < scribbleThumbnailPathsArray.count ? scribbleThumbnailPathsArray[index] : nil;
+    NSString *scribbleThumbnailDir = index < scribbleThumbnailPathsArray.count ? scribbleThumbnailPathsArray[index] : nil;
     NSString *scribblePath = index < scribblePathsArray.count ? scribblePathsArray[index] : nil;
     
-    if (scribbleThumbnailPath) {
+    if (scribbleThumbnailDir) {
         // initialize an instance of ScribbleThumbnailProxy
         // with the exact location of the thumbnail in the file system
         loadedScribbleThumbnail = [[ScribbleThumbnailViewImageProxy alloc] init];
-        loadedScribbleThumbnail.imagePath = [kScribbleThumbnailPath stringByAppendingPathComponent:scribbleThumbnailPath];
+        loadedScribbleThumbnail.imagePath = [kScribbleThumbnailPath stringByAppendingPathComponent:scribbleThumbnailDir];
         loadedScribbleThumbnail.scribblePath = [kScribbleDataPath stringByAppendingPathComponent:scribblePath];
         
         // assign a touch command to the scribble thumbnail
@@ -101,7 +100,7 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (NSString *)scribbleDataPath {
+- (NSString *)scribbleDataDir {
     // lazy create the scribble data directory
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:kScribbleDataPath]) {
@@ -111,7 +110,7 @@
     return kScribbleDataPath;
 }
 
-- (NSString *)scribbleThumbnailPath {
+- (NSString *)scribbleThumbnailDir {
     // lazy create the scribble data directory
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:kScribbleThumbnailPath]) {
@@ -121,18 +120,19 @@
     return kScribbleThumbnailPath;
 }
 
-- (NSArray *)scribbleDataPaths {
+- (NSArray *)scribbleDataFiles {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
-    NSArray *scribbleDataPathsArray = [fileManager contentsOfDirectoryAtPath:self.scribbleDataPath error:&error];
+    NSArray *scribbleDataPathsArray = [fileManager contentsOfDirectoryAtPath:self.scribbleDataDir error:&error];
+    //NSLog(@"scribbleDataPathsArray = %@", scribbleDataPathsArray);
     
     return scribbleDataPathsArray;
 }
 
-- (NSArray *)scribbleThumbnailPaths {
+- (NSArray *)scribbleThumbnailFiles {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
-    NSArray *scribbleThumbnailPathsArray = [fileManager contentsOfDirectoryAtPath:self.scribbleThumbnailPath error:&error];
+    NSArray *scribbleThumbnailPathsArray = [fileManager contentsOfDirectoryAtPath:self.scribbleThumbnailDir error:&error];
     
     return scribbleThumbnailPathsArray;
 }
