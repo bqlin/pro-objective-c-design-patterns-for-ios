@@ -11,7 +11,6 @@
 
 @interface Scribble ()
 {
-    //id<Mark> _parentMark;
     id<Mark> _incrementalMark;
 }
 

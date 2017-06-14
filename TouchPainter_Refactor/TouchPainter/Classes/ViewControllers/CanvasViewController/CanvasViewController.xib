@@ -21,6 +21,7 @@
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ezb-uR-wRs"/>
                         <barButtonItem style="plain" systemItem="trash" id="BtM-Wy-glI" customClass="CommandBarButton">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCustomBarButtonHit:" destination="-1" id="5jN-Ph-V3N"/>
                                 <outlet property="command" destination="y7A-gU-OL2" id="Eg9-2d-cja"/>
@@ -28,6 +29,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Z0v-Jp-yLM"/>
                         <barButtonItem image="save.png" style="plain" id="RmJ-1u-v6N" userLabel="Save" customClass="CommandBarButton">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onCustomBarButtonHit:" destination="-1" id="21e-Cp-YrW"/>
                                 <outlet property="command" destination="3Zc-N2-FAg" id="iBI-Sc-Gop"/>
@@ -35,24 +37,28 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0tY-dN-rUr"/>
                         <barButtonItem tag="2" image="open.png" style="plain" id="6MC-md-4sb" userLabel="Open">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="requestViewChangeByObject:" destination="Rqk-K2-iZT" id="chv-ph-e5g"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="s2f-Md-if3"/>
                         <barButtonItem tag="1" image="palette.png" style="plain" id="nHk-Oe-oai" userLabel="Palette">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="requestViewChangeByObject:" destination="Rqk-K2-iZT" id="vfD-SA-4Lz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5XX-TK-0b0"/>
                         <barButtonItem tag="4" image="undo.png" style="plain" id="STq-B5-DJo" userLabel="Undo">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onBarButtonHit:" destination="-1" id="rwe-bY-gCD"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="pq3-Ln-Jgm"/>
                         <barButtonItem tag="5" image="redo.png" style="plain" id="5AT-AJ-atP" userLabel="Redo">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onBarButtonHit:" destination="-1" id="zkg-VQ-JGR"/>
                             </connections>
