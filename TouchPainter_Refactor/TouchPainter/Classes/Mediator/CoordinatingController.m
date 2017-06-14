@@ -8,26 +8,42 @@
 
 #import "CoordinatingController.h"
 
+@interface CoordinatingController ()
+
+@end
+
 @implementation CoordinatingController
 
 #pragma mark -
 #pragma mark CoordinatingController Singleton Implementation
 
+static CoordinatingController *_sharedInstance = nil;
+
 + (instancetype)sharedInstance{
-    static CoordinatingController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
+        _sharedInstance = [[self alloc] init];
+        [_sharedInstance commonInit];
     });
-    return sharedInstance;
+    return _sharedInstance;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        _canvasViewController = [[CanvasViewController alloc] init];
-        _activeViewController = _canvasViewController;
-    }
-    return self;
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!_sharedInstance) {
+            _sharedInstance = [super allocWithZone:zone];
+        }
+    });
+    return _sharedInstance;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return _sharedInstance;
+}
+
+- (void)commonInit {
+    _activeViewController = _canvasViewController = [[CanvasViewController alloc] init];
 }
 
 #pragma mark -
@@ -41,15 +57,16 @@
             PaletteViewController *controller = [[PaletteViewController alloc] init];
             
             // transition to the PaletteViewController
-            [self.canvasViewController presentViewController:controller animated:YES completion:NULL];
+            [self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
             
             // set the activeViewController
             _activeViewController = controller;
         }break;
         case kButtonTagOpenThumbnailView:{
             ThumbnailViewController *controller = [[ThumbnailViewController alloc] init];
-            [self.canvasViewController presentViewController:controller animated:YES completion:NULL];
+            [self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
             _activeViewController = controller;
+            
         }break;
         default:{ // just go back to the main canvasViewController for the other types
             // The Done command is shared on every
@@ -69,6 +86,11 @@
         [self.canvasViewController dismissViewControllerAnimated:YES completion:NULL];
         _activeViewController = _canvasViewController;
     }
+    //NSLog(@"%@ - %@ - %@", self, self.canvasViewController, self.activeViewController);
+}
+
+- (UINavigationController *)navaigationWithRootViewController:(UIViewController *)viewController {
+    return [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
 @end

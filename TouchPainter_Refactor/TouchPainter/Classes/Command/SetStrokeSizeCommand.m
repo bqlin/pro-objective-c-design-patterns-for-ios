@@ -16,7 +16,7 @@
     // get the current stroke size
     // from whatever it's my delegate
     CGFloat strokeSize = 1;
-    [self.delegate command:self DidRequestForStrokeSize:&strokeSize];
+    [self.delegate command:self didRequestForStrokeSize:&strokeSize];
     
     // get a hold of the current
     // canvasViewController from

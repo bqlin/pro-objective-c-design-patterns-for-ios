@@ -15,7 +15,8 @@
 
 @interface CanvasViewController : UIViewController
 
-@property (nonatomic, strong) CanvasView *canvasView;
+//@property (nonatomic, strong) CanvasView *canvasView;
+@property (weak, nonatomic) IBOutlet CanvasView *canvasView;
 @property (nonatomic, strong) Scribble *scribble;
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, assign) CGFloat strokeSize;
@@ -23,6 +24,7 @@
 - (void)loadCanvasViewWithGenerator:(CanvasViewGenerator *)generator;
 
 - (IBAction)onBarButtonHit:(id)sender;
+// Save, 
 - (IBAction)onCustomBarButtonHit:(CommandBarButton *)sender;
 
 - (NSInvocation *)drawScribbleInvocation;

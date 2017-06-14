@@ -80,8 +80,8 @@
     
     // load scribble thumbnail from the path indicated
     // by the index
-    NSString *scribbleThumbnailPath = scribbleThumbnailPathsArray[index];
-    NSString *scribblePath = scribblePathsArray[index];
+    NSString *scribbleThumbnailPath = index < scribbleThumbnailPathsArray.count ? scribbleThumbnailPathsArray[index] : nil;
+    NSString *scribblePath = index < scribblePathsArray.count ? scribblePathsArray[index] : nil;
     
     if (scribbleThumbnailPath) {
         // initialize an instance of ScribbleThumbnailProxy

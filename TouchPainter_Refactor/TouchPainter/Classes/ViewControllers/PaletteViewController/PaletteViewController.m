@@ -7,6 +7,7 @@
 //
 
 #import "PaletteViewController.h"
+#import "CoordinatingController.h"
 
 @interface PaletteViewController ()
 {
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setupUI];
+}
+
+- (void)setupUI {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:[CoordinatingController sharedInstance] action:@selector(requestViewChangeByObject:)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +53,6 @@
 
 - (void)onCommandSliderValueChanged:(CommandSlider *)slider {
     [slider.command execute];
-    
 }
 
 #pragma mark -
@@ -61,6 +66,12 @@
 
 - (void)command:(SetStrokeColorCommand *)command didFinishColorUpdateWithColor:(UIColor *)color {
     _paletteView.backgroundColor = color;
+}
+
+#pragma mark SetStrokeSizeCommandDelegate method
+
+- (void)command:(SetStrokeSizeCommand *)command didRequestForStrokeSize:(CGFloat *)size {
+    *size = _sizeSlider.value;
 }
 
 @end

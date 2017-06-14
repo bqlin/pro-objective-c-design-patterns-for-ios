@@ -45,6 +45,8 @@
     // set the table view's background
     // with a dark cloth texture image
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_texture"]];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,13 +69,26 @@
 }
 
 
+//// 各行显示的内容
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    static NSString *reuseID = @"##重用 ID##";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseID];
+//    }
+//    
+//    // 设置内容
+//    @cursor
+//    return cell;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    ScribbleThumbnailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ScribbleThumbnailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
         cell = [[ScribbleThumbnailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = [UITableViewCellSelectionStyleNone];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     // populate  thumbnails in each cell
@@ -88,7 +103,7 @@
     // thumbnail index in the scribble manager is (row index *3) +0, +1, +2
     NSUInteger rowIndex = indexPath.row;
     NSInteger thumbnailIndex = rowIndex * numberOfSupportedThumbnails;
-    NSInteger numberOfScribble = _scribbleManager.numberOfScribbles;
+    NSInteger numberOfScribbles = _scribbleManager.numberOfScribbles;
     for (NSInteger i = 0; i < numberOfSupportedThumbnails && (thumbnailIndex + i) < numberOfScribbles; ++i) {
         UIView *scribbleThumbnail = [_scribbleManager scribbleThumbnailViewAtIndex:thumbnailIndex + i];
         [cell addThumbnailView:scribbleThumbnail atIndex:i];

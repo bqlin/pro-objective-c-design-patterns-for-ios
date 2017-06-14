@@ -15,12 +15,11 @@
 		E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E53CC89A1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m */; };
 		E550DE301EEFDAC3006A1CC3 /* DeleteScribbleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E550DE2F1EEFDAC3006A1CC3 /* DeleteScribbleCommand.m */; };
 		E550DE331EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E550DE321EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m */; };
+		E550DE3B1EEFF3E8006A1CC3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E550DE3A1EEFF3E8006A1CC3 /* icon.png */; };
 		E57CA27C1EE5514400E9C7E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA27B1EE5514400E9C7E5 /* main.m */; };
 		E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */; };
-		E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2971EE553EB00E9C7E5 /* ViewController.m */; };
 		E57CA2A01EE553EB00E9C7E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */; };
 		E57CA2A11EE553EB00E9C7E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57CA29A1EE553EB00E9C7E5 /* LaunchScreen.storyboard */; };
-		E57CA2A21EE553EB00E9C7E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E57CA29C1EE553EB00E9C7E5 /* Main.storyboard */; };
 		E57CA2B01EE5588400E9C7E5 /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2AF1EE5588400E9C7E5 /* UIView+UIImage.m */; };
 		E57CA2B51EE559EB00E9C7E5 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2B41EE559EB00E9C7E5 /* NSMutableArray+Stack.m */; };
 		E57CA2BC1EE55B1F00E9C7E5 /* CommandSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E57CA2BB1EE55B1F00E9C7E5 /* CommandSlider.m */; };
@@ -72,16 +71,14 @@
 		E550DE2F1EEFDAC3006A1CC3 /* DeleteScribbleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteScribbleCommand.m; sourceTree = "<group>"; };
 		E550DE311EEFDB6E006A1CC3 /* SetStrokeSizeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStrokeSizeCommand.h; sourceTree = "<group>"; };
 		E550DE321EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeSizeCommand.m; sourceTree = "<group>"; };
+		E550DE3A1EEFF3E8006A1CC3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E57CA2771EE5514400E9C7E5 /* TouchPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57CA27B1EE5514400E9C7E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E57CA28B1EE5514400E9C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E57CA2941EE553EB00E9C7E5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E57CA2961EE553EB00E9C7E5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E57CA2971EE553EB00E9C7E5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E57CA29B1EE553EB00E9C7E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E57CA29D1EE553EB00E9C7E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E57CA2AE1EE5588400E9C7E5 /* UIView+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIImage.h"; sourceTree = "<group>"; };
 		E57CA2AF1EE5588400E9C7E5 /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
 		E57CA2B31EE559EB00E9C7E5 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
@@ -208,8 +205,6 @@
 				E57CA2A31EE5548E00E9C7E5 /* ViewControllers */,
 				E57CA2941EE553EB00E9C7E5 /* AppDelegate.h */,
 				E57CA2951EE553EB00E9C7E5 /* AppDelegate.m */,
-				E57CA2961EE553EB00E9C7E5 /* ViewController.h */,
-				E57CA2971EE553EB00E9C7E5 /* ViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -220,7 +215,6 @@
 				E57CA2C81EE55CC500E9C7E5 /* Images */,
 				E57CA2991EE553EB00E9C7E5 /* Assets.xcassets */,
 				E57CA29A1EE553EB00E9C7E5 /* LaunchScreen.storyboard */,
-				E57CA29C1EE553EB00E9C7E5 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -396,6 +390,7 @@
 		E57CA2C81EE55CC500E9C7E5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E550DE3A1EEFF3E8006A1CC3 /* icon.png */,
 				E57CA2C91EE55CC500E9C7E5 /* background_texture.png */,
 				E57CA2CA1EE55CC500E9C7E5 /* large_dot.png */,
 				E57CA2CB1EE55CC500E9C7E5 /* open.png */,
@@ -494,7 +489,6 @@
 				E57CA2C71EE55C8700E9C7E5 /* CanvasViewController.xib in Resources */,
 				E57CA2D71EE55CC500E9C7E5 /* redo.png in Resources */,
 				E57CA2D31EE55CC500E9C7E5 /* large_dot.png in Resources */,
-				E57CA2A21EE553EB00E9C7E5 /* Main.storyboard in Resources */,
 				E57CA2A01EE553EB00E9C7E5 /* Assets.xcassets in Resources */,
 				E57CA2D61EE55CC500E9C7E5 /* placeholder.png in Resources */,
 				E57CA2D81EE55CC500E9C7E5 /* save.png in Resources */,
@@ -502,6 +496,7 @@
 				E57CA2D91EE55CC500E9C7E5 /* small_dot.png in Resources */,
 				E57CA2A11EE553EB00E9C7E5 /* LaunchScreen.storyboard in Resources */,
 				E57CA2D51EE55CC500E9C7E5 /* palette.png in Resources */,
+				E550DE3B1EEFF3E8006A1CC3 /* icon.png in Resources */,
 				E57CA2D21EE55CC500E9C7E5 /* background_texture.png in Resources */,
 				E57CA2DF1EE55E1E00E9C7E5 /* PaletteViewController.xib in Resources */,
 				E57CA2D41EE55CC500E9C7E5 /* open.png in Resources */,
@@ -538,7 +533,6 @@
 				E57CA2E51EE5615D00E9C7E5 /* CoordinatingController.m in Sources */,
 				E590F5E71EE65E540033AF17 /* Scribble.m in Sources */,
 				E57CA2C61EE55C8700E9C7E5 /* CanvasViewController.m in Sources */,
-				E57CA29F1EE553EB00E9C7E5 /* ViewController.m in Sources */,
 				E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */,
 				E5069E881EEF884000A68799 /* OpenScribbleCommand.m in Sources */,
 				E590F5F21EE6823E0033AF17 /* Dot.m in Sources */,
@@ -558,14 +552,6 @@
 				E57CA29B1EE553EB00E9C7E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E57CA29C1EE553EB00E9C7E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E57CA29D1EE553EB00E9C7E5 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

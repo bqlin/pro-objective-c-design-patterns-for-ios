@@ -17,13 +17,15 @@ typedef NS_ENUM(NSInteger, ButtonTag) {
     kButtonTagOpenThumbnailView
 };
 
-@interface CoordinatingController : NSObject
+@interface CoordinatingController : NSObject <NSCopying>
 
 @property (nonatomic, readonly) UIViewController *activeViewController;
 @property (nonatomic, readonly) CanvasViewController *canvasViewController;
 
 + (instancetype)sharedInstance;
 
+// jump to view controller
+// open, 
 - (IBAction)requestViewChangeByObject:(id)sender;
 
 @end

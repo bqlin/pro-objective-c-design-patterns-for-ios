@@ -10,8 +10,9 @@
 #import "CommandBarButton.h"
 #import "CommandSlider.h"
 #import "SetStrokeColorCommand.h"
+#import "SetStrokeSizeCommand.h"
 
-@interface PaletteViewController : UIViewController <SetStrokeColorCommandDelegate>
+@interface PaletteViewController : UIViewController <SetStrokeColorCommandDelegate, SetStrokeSizeCommandDelegate>
 
 // slider event handler
 - (IBAction)onCommandSliderValueChanged:(CommandSlider *)slider;

@@ -40,12 +40,6 @@ static NSString * const SizeKey = @"size";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // Get a default canvas view
-    // with the factory method of
-    // the CanvasViewGenerator
-    CanvasViewGenerator *defaultGenerator = [[CanvasViewGenerator alloc] init];
-    [self loadCanvasViewWithGenerator:defaultGenerator];
-    
     // initialize a Scribble model
     Scribble *scribble = [[Scribble alloc] init];
     self.scribble = scribble;
@@ -60,6 +54,16 @@ static NSString * const SizeKey = @"size";
     self.strokeSize = sizeValue;
     self.strokeColor = [UIColor colorWithRed:redValue green:greenValue blue:blueValue alpha:1.0];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // Get a default canvas view
+    // with the factory method of
+    // the CanvasViewGenerator
+    //CanvasViewGenerator *defaultGenerator = [[CanvasViewGenerator alloc] init];
+    //[self loadCanvasViewWithGenerator:defaultGenerator];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -106,9 +110,11 @@ static NSString * const SizeKey = @"size";
 
 - (void)loadCanvasViewWithGenerator:(CanvasViewGenerator *)generator {
     [_canvasView removeFromSuperview];
-    CGRect frame = CGRectMake(0, 0, 320, 436);
+    //CGRect frame = CGRectMake(0, 0, 320, 436);
+    CGRect frame = self.canvasView.frame;
     CanvasView *canvasView = [generator canvasViewWithFrame:frame];
     self.canvasView = canvasView;
+    self.canvasView.backgroundColor = [UIColor redColor];
     //NSInteger viewIndex = self.view.subviews.count - 1;
     //[self.view insertSubview:self.canvasView atIndex:viewIndex];
     [self.view addSubview:self.canvasView];
@@ -119,6 +125,7 @@ static NSString * const SizeKey = @"size";
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     _startPoint = [touches.anyObject locationInView:self.canvasView];
+    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
