@@ -68,20 +68,6 @@
     return numberOfRows;
 }
 
-
-//// 各行显示的内容
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *reuseID = @"##重用 ID##";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseID];
-//    }
-//    
-//    // 设置内容
-//    @cursor
-//    return cell;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     ScribbleThumbnailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
