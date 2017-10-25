@@ -14,6 +14,7 @@ typedef void (^PostColorUpdateProvider)(UIColor *color);
 
 @class SetStrokeColorCommand;
 
+// 是SetStrokeColorCommand客户端的Target
 @protocol SetStrokeColorCommandDelegate
 
 - (void)command:(SetStrokeColorCommand *)command didRequestColorComponentsForRed:(CGFloat*)red green:(CGFloat*)green blue:(CGFloat*)blue;
@@ -22,6 +23,7 @@ typedef void (^PostColorUpdateProvider)(UIColor *color);
 
 @end
 
+// 客户端
 @interface SetStrokeColorCommand : Command
 
 @property (nonatomic, weak) IBOutlet id<SetStrokeColorCommandDelegate> delegate;

@@ -5,6 +5,7 @@
 //  Created by LinBq on 2017/6/6.
 //  Copyright © 2017年 LinBq. All rights reserved.
 //
+// Mark 是一个聚合体。
 
 #import <UIKit/UIKit.h>
 #import "MarkVisitor.h"
