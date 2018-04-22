@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03B19149208CC4AD00F0BEEC /* ClothCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B19148208CC4AD00F0BEEC /* ClothCanvasView.m */; };
+		03B1914C208CC52700F0BEEC /* PaperCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B1914B208CC52700F0BEEC /* PaperCanvasView.m */; };
 		E5069E881EEF884000A68799 /* OpenScribbleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E5069E871EEF884000A68799 /* OpenScribbleCommand.m */; };
 		E5069E8C1EEF919900A68799 /* ScribbleThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5069E8B1EEF919900A68799 /* ScribbleThumbnailCell.m */; };
 		E5069E8F1EEF94AD00A68799 /* ThumbnailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5069E8E1EEF94AD00A68799 /* ThumbnailViewController.m */; };
@@ -53,6 +55,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03B19147208CC4AD00F0BEEC /* ClothCanvasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClothCanvasView.h; sourceTree = "<group>"; };
+		03B19148208CC4AD00F0BEEC /* ClothCanvasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClothCanvasView.m; sourceTree = "<group>"; };
+		03B1914A208CC52700F0BEEC /* PaperCanvasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaperCanvasView.h; sourceTree = "<group>"; };
+		03B1914B208CC52700F0BEEC /* PaperCanvasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaperCanvasView.m; sourceTree = "<group>"; };
 		E5069E861EEF884000A68799 /* OpenScribbleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenScribbleCommand.h; sourceTree = "<group>"; };
 		E5069E871EEF884000A68799 /* OpenScribbleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenScribbleCommand.m; sourceTree = "<group>"; };
 		E5069E8A1EEF919900A68799 /* ScribbleThumbnailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleThumbnailCell.h; sourceTree = "<group>"; };
@@ -231,6 +237,10 @@
 			children = (
 				E590F5FF1EE68CA40033AF17 /* CanvasView.h */,
 				E590F6001EE68CA40033AF17 /* CanvasView.m */,
+				03B19147208CC4AD00F0BEEC /* ClothCanvasView.h */,
+				03B19148208CC4AD00F0BEEC /* ClothCanvasView.m */,
+				03B1914A208CC52700F0BEEC /* PaperCanvasView.h */,
+				03B1914B208CC52700F0BEEC /* PaperCanvasView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,6 +527,7 @@
 				E57CA2B51EE559EB00E9C7E5 /* NSMutableArray+Stack.m in Sources */,
 				E57CA2BC1EE55B1F00E9C7E5 /* CommandSlider.m in Sources */,
 				E590F5F81EE683CB0033AF17 /* MarkEnumerator.m in Sources */,
+				03B19149208CC4AD00F0BEEC /* ClothCanvasView.m in Sources */,
 				E57CA2DE1EE55E1E00E9C7E5 /* PaletteViewController.m in Sources */,
 				E57CA2E21EE55F6600E9C7E5 /* SetStrokeColorCommand.m in Sources */,
 				E550DE331EEFDB6E006A1CC3 /* SetStrokeSizeCommand.m in Sources */,
@@ -532,6 +543,7 @@
 				E53CC89B1EE7FDB20090DFAA /* ScribbleThumbnailViewImageProxy.m in Sources */,
 				E5069E881EEF884000A68799 /* OpenScribbleCommand.m in Sources */,
 				E590F5F21EE6823E0033AF17 /* Dot.m in Sources */,
+				03B1914C208CC52700F0BEEC /* PaperCanvasView.m in Sources */,
 				E5069E8C1EEF919900A68799 /* ScribbleThumbnailCell.m in Sources */,
 				E57CA29E1EE553EB00E9C7E5 /* AppDelegate.m in Sources */,
 				E57CA27C1EE5514400E9C7E5 /* main.m in Sources */,
