@@ -10,6 +10,11 @@
 #import <UIKit/UIKit.h>
 #import "MarkVisitor.h"
 
+static NSString * const RedKey = @"red";
+static NSString * const GreenKey = @"green";
+static NSString * const BlueKey = @"blue";
+static NSString * const SizeKey = @"size";
+
 @protocol Mark <NSObject, NSCopying, NSCoding>
 
 @property (nonatomic, strong) UIColor *color;

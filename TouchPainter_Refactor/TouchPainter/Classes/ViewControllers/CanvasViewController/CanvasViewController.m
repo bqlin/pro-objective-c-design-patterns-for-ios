@@ -10,11 +10,6 @@
 #import "Dot.h"
 #import "Stroke.h"
 
-static NSString * const RedKey = @"red";
-static NSString * const GreenKey = @"green";
-static NSString * const BlueKey = @"blue";
-static NSString * const SizeKey = @"size";
-
 @interface CanvasViewController ()
 {
     CGPoint _startPoint;
@@ -128,7 +123,6 @@ static NSString * const SizeKey = @"size";
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     _startPoint = [touches.anyObject locationInView:self.canvasView];
-    //NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

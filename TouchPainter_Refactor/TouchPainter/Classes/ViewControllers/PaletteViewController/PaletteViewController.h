@@ -12,6 +12,9 @@
 #import "SetStrokeColorCommand.h"
 #import "SetStrokeSizeCommand.h"
 
+/**
+ 调色视图控制器
+ */
 @interface PaletteViewController : UIViewController <SetStrokeColorCommandDelegate, SetStrokeSizeCommandDelegate>
 
 // slider event handler

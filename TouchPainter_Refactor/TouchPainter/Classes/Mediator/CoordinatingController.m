@@ -51,37 +51,37 @@ static CoordinatingController *_sharedInstance = nil;
 
 - (void)requestViewChangeByObject:(id)sender {
     if ([sender isKindOfClass:[UIBarButtonItem class]]) {
-        switch ([(UIBarButtonItem *)sender tag]) {
-        case kButtonTagOpenPaletteView:{
-            // load a PaletteViewController
-            PaletteViewController *controller = [[PaletteViewController alloc] init];
-            
-            // transition to the PaletteViewController
-            [self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
-            
-            // set the activeViewController
-            _activeViewController = controller;
-        }break;
-        case kButtonTagOpenThumbnailView:{
-            ThumbnailViewController *controller = [[ThumbnailViewController alloc] init];
-            [self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
-            _activeViewController = controller;
-            
-        }break;
-        default:{ // just go back to the main canvasViewController for the other types
-            // The Done command is shared on every
-            // view controller except the CanvasViewController
-            // When the Done button is hit, it should
-            // take the user back to the first page in
-            // conjunction with the design
-            // other objects will follow the same path
-            [self.canvasViewController dismissViewControllerAnimated:YES completion:NULL];
-            
-            // set the activeViewController back to
-            // canvasViewController
-            _activeViewController = _canvasViewController;
-        }break;
-        }
+		// 根据 sender 的 tag 区分需要呈现的视图控制器
+		switch ([(UIBarButtonItem *)sender tag]) {
+			case kButtonTagOpenPaletteView:{    
+				// load a PaletteViewController
+				PaletteViewController *controller = [[PaletteViewController alloc] init];
+				
+				// transition to the PaletteViewController
+				[self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
+				
+				// set the activeViewController
+				_activeViewController = controller;
+			}break;
+			case kButtonTagOpenThumbnailView:{
+				ThumbnailViewController *controller = [[ThumbnailViewController alloc] init];
+				[self.canvasViewController presentViewController:[self navaigationWithRootViewController:controller] animated:YES completion:NULL];
+				_activeViewController = controller;
+			}break;
+			default:{ // just go back to the main canvasViewController for the other types
+					  // The Done command is shared on every
+					  // view controller except the CanvasViewController
+					  // When the Done button is hit, it should
+					  // take the user back to the first page in
+					  // conjunction with the design
+					  // other objects will follow the same path
+				[self.canvasViewController dismissViewControllerAnimated:YES completion:NULL];
+				
+				// set the activeViewController back to
+				// canvasViewController
+				_activeViewController = _canvasViewController;
+			}break;
+		}
     } else { // every thing else goes to the main canvasViewController
         [self.canvasViewController dismissViewControllerAnimated:YES completion:NULL];
         _activeViewController = _canvasViewController;

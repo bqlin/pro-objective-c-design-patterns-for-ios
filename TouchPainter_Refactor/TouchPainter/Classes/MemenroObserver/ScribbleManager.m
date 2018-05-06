@@ -30,20 +30,23 @@
 @implementation ScribbleManager
 
 - (void)saveScribble:(Scribble *)scribble thumbnail:(UIImage *)image {
+	// 此处运用了外观模式，使用该高层接口完成以下事情
     // get a new index for the new scribble data and its thumbnail
     NSInteger newIndex = self.numberOfScribbles + 1;
     
     // use the index as part of the name for each of them
     NSString *scribbleDataName = [NSString stringWithFormat:@"data_%zd", newIndex];
     NSString *scribbleThumbnailName = [NSString stringWithFormat:@"thumbnail_%zd.png", newIndex];
-    
+	
+	// 1. 保存墨迹的备忘录
     // get a memento from the scribble
     // then save the memento in the file system
     ScribbleMemento *scribbleMemento = scribble.scribbleMemento;
     NSData *mementoData = scribbleMemento.data;
     NSString *mementoPath = [self.scribbleDataDir stringByAppendingPathComponent:scribbleDataName];
     [mementoData writeToFile:mementoPath atomically:YES];
-    
+	
+	// 2. 保存缩略图
     // save the thumbnail directly in
     // the file system
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];

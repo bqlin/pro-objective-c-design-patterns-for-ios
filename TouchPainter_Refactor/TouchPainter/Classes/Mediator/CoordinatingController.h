@@ -17,8 +17,12 @@ typedef NS_ENUM(NSInteger, ButtonTag) {
     kButtonTagOpenThumbnailView
 };
 
+/**
+ 中间协调控制器单例
+ */
 @interface CoordinatingController : NSObject <NSCopying>
 
+/// 当前需要呈现的视图控制器
 @property (nonatomic, readonly) UIViewController *activeViewController;
 @property (nonatomic, readonly) CanvasViewController *canvasViewController;
 
