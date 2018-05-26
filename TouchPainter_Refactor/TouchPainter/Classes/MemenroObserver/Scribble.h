@@ -14,6 +14,7 @@ static NSString * const MarkKey = @"mark";
 
 @interface Scribble : NSObject
 
+// 通过方法操作 Mark 对象，并在内部手动发送 KVO 通知
 // methods for Mark management
 - (void)addMark:(id<Mark>)mark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark;
 - (void)removeMark:(id<Mark>)mark;

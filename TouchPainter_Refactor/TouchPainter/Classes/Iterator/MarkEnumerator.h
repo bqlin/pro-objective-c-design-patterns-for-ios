@@ -18,7 +18,7 @@
 
 @interface MarkEnumerator (Private)
 
-- (id) initWithMark:(id <Mark>)mark;
-- (void) traverseAndBuildStackWithMark:(id <Mark>)mark;
+- (instancetype)initWithMark:(id<Mark>)mark;
+- (void)traverseAndBuildStackWithMark:(id<Mark>)mark;
 
 @end
