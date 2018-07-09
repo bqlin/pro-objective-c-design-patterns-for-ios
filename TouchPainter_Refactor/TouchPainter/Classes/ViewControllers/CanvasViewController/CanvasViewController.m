@@ -74,8 +74,7 @@
 #pragma mark Stroke color and size accessor methods
 
 - (void)setStrokeSize:(CGFloat)strokeSize {
-    // enforce the smallest size
-    // allowed
+    // enforce the smallest size allowed
     if (strokeSize < 5.0) {
         _strokeSize = 5.0;
     } else {
@@ -84,7 +83,7 @@
 }
 
 #pragma mark -
-#pragma mark Toolbar button hit method
+#pragma mark Toolbar button hit method, 在头文件声明为 IBAction
 
 - (void)onBarButtonHit:(id)sender {
     UIBarButtonItem *barButton = sender;
@@ -128,37 +127,30 @@
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint lastPoint = [touches.anyObject previousLocationInView:self.canvasView];
     
-    // add a new stroke to scribble
-    // if this is indeed a drag from
-    // a finger
-    if (CGPointEqualToPoint(lastPoint, _startPoint)) {
+    // add a new stroke to scribble if this is indeed a drag from a finger
+	if (CGPointEqualToPoint(lastPoint, _startPoint)) { // 上次触摸是屏幕的第一次触摸，则创建 Stroke 对象，并附加到 _scribble；意味着开始绘制线条时就创建实例
         id<Mark> newStroke = [[Stroke alloc] init];
         [newStroke setColor:self.strokeColor];
         [newStroke setSize:self.strokeSize];
         
         //[scribble_ addMark:newStroke shouldAddToPreviousMark:NO];
-        
-        // retrieve a new NSInvocation for drawing and
-        // set new arguments for the draw command
+		
+		/// 创建并执行带有撤销命令的绘图命令
+        // retrieve a new NSInvocation for drawing and set new arguments for the draw command
         NSInvocation *drawInvocation = [self drawScribbleInvocation];
         [drawInvocation setArgument:&newStroke atIndex:2];
-        
-        // retrieve a new NSInvocation for undrawing and
-        // set a new argument for the undraw command
+        // retrieve a new NSInvocation for undrawing and set a new argument for the undraw command
         NSInvocation *undrawInvocation = [self undrawScribbleInvocation];
         [undrawInvocation setArgument:&newStroke atIndex:2];
-        
         // execute the draw command with the undraw command
         [self executeInvocation:drawInvocation withUndoInvocation:undrawInvocation];
     }
     
-    // add the current touch as another vertex to the
-    // temp stroke
+    // add the current touch as another vertex to the temp stroke
     CGPoint thisPoint = [touches.anyObject locationInView:self.canvasView];
     Vertex *vertex = [[Vertex alloc] initWithLocation:thisPoint];
     
-    // we don't need to undo every vertex
-    // so we are keeping this
+    // we don't need to undo every vertex so we are keeping this
     [self.scribble addMark:vertex shouldAddToPreviousMark:YES];
 }
 
@@ -169,23 +161,20 @@
     // if the touch never moves (stays at the same spot until lifted now)
     // just add a dot to an existing stroke composite
     // otherwise add it to the temp stroke as the last vertex
-    if (CGPointEqualToPoint(lastPoint, thisPoint)) {
+    if (CGPointEqualToPoint(lastPoint, thisPoint)) { // 绘制的是一个点
         Dot *singleDot = [[Dot alloc] initWithLocation:thisPoint];
         singleDot.color = self.strokeColor;
         singleDot.size = self.strokeSize;
         
         //[scribble_ addMark:singleDot shouldAddToPreviousMark:NO];
-        
-        // retrieve a new NSInvocation for drawing and
-        // set new arguments for the draw command
+		
+		/// 类似的，创建并执行带有撤销命令的绘图命令
+        // retrieve a new NSInvocation for drawing and set new arguments for the draw command
         NSInvocation *drawInvocation = [self drawScribbleInvocation];
         [drawInvocation setArgument:&singleDot atIndex:2];
-        
-        // retrieve a new NSInvocation for undrawing and
-        // set a new argument for the undraw command
+        // retrieve a new NSInvocation for undrawing and set a new argument for the undraw command
         NSInvocation *undrawInvocation = [self undrawScribbleInvocation];
         [undrawInvocation setArgument:&singleDot atIndex:2];
-        
         // execute the draw command with the undraw command
         [self executeInvocation:drawInvocation withUndoInvocation:undrawInvocation];
     }
@@ -217,9 +206,10 @@
 #pragma mark -
 #pragma mark Draw Scribble Invocation Generation Methods
 
+/// 绘图操作调用
 - (NSInvocation *)drawScribbleInvocation {
     NSMethodSignature *executeMethodSignature = [_scribble methodSignatureForSelector:@selector(addMark:shouldAddToPreviousMark:)];
-    NSInvocation *drawInvocation =[NSInvocation invocationWithMethodSignature:executeMethodSignature];
+    NSInvocation *drawInvocation = [NSInvocation invocationWithMethodSignature:executeMethodSignature];
     
     drawInvocation.target = self.scribble;
     drawInvocation.selector = @selector(addMark:shouldAddToPreviousMark:);
@@ -229,6 +219,7 @@
     return drawInvocation;
 }
 
+/// 撤销绘图调用
 - (NSInvocation *)undrawScribbleInvocation {
     NSMethodSignature *unexecuteMethodSignature = [self.scribble methodSignatureForSelector:@selector(removeMark:)];
     NSInvocation *undrawInvocation = [NSInvocation invocationWithMethodSignature:unexecuteMethodSignature];
@@ -238,8 +229,9 @@
     return undrawInvocation;
 }
 
-#pragma mark Draw Scribble Command Methods
+#pragma mark Draw Scribble Command Methods 以下两个方法相互交叉调用
 
+/// 执行带撤销命令的命令
 - (void)executeInvocation:(NSInvocation *)invocation withUndoInvocation:(NSInvocation *)undoInvocation {
     [invocation retainArguments];
     
